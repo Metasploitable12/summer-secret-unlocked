@@ -117,7 +117,7 @@ const WelcomePage: React.FC = () => {
           <div className="bg-card/30 border border-border/50 rounded-lg p-4 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Users className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium text-foreground">Presented tou you by the InfoSec Team</span>
+              <span className="text-sm font-medium text-foreground">Presented to you by the InfoSec Team</span>
             </div>
             <p className="text-xs text-muted-foreground text-center">
               Committed to keeping our organization secure and compliant
@@ -133,7 +133,7 @@ const WelcomePage: React.FC = () => {
               Start Security Challenge
             </Button>
             <p className="text-sm text-muted-foreground">
-              Complete 4 interactive challenges find out what InfoSec team at Syncron Prepared for you.
+              Complete 4 interactive challenges to find out what InfoSec team at Syncron Prepared for you.
             </p>
           </div>
         </div>
