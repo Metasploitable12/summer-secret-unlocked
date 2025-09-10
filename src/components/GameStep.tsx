@@ -214,9 +214,7 @@ const GameStep: React.FC = () => {
         description: `You've cracked the code and revealed: ${currentChallenge.letter}`,
       });
       
-      setTimeout(() => {
-        nextStep();
-      }, 1500);
+      nextStep();
     } else {
       setAttempts(prev => prev + 1);
       if (attempts === 0) {
