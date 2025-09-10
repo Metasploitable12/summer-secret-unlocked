@@ -55,8 +55,8 @@ const WelcomePage: React.FC = () => {
             </div>
             <div className="text-center space-y-2">
               <Award className="w-8 h-8 text-accent mx-auto" />
-              <h3 className="font-semibold text-foreground">Certification</h3>
-              <p className="text-sm text-muted-foreground">Earn security credentials</p>
+              <h3 className="font-semibold text-foreground">Reporting</h3>
+              <p className="text-sm text-muted-foreground">Learn Incident reporting concepts</p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@ const WelcomePage: React.FC = () => {
                   <strong className="text-foreground">Difficulty:</strong> Beginner to Intermediate
                 </p>
                 <p className="text-muted-foreground">
-                  <strong className="text-foreground">Certification:</strong> Available upon completion
+                  <strong className="text-foreground">Vigilance:</strong> learnt upon completion
                 </p>
               </div>
             </div>
@@ -117,10 +117,10 @@ const WelcomePage: React.FC = () => {
           <div className="bg-card/30 border border-border/50 rounded-lg p-4 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Users className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium text-foreground">Presented by the Information Security Team</span>
+              <span className="text-sm font-medium text-foreground">Presented tou you by the InfoSec Team</span>
             </div>
             <p className="text-xs text-muted-foreground text-center">
-              Committed to keeping our organization secure through education and awareness
+              Committed to keeping our organization secure and compliant
             </p>
           </div>
 
@@ -133,7 +133,7 @@ const WelcomePage: React.FC = () => {
               Start Security Challenge
             </Button>
             <p className="text-sm text-muted-foreground">
-              Complete 4 interactive challenges to earn your security awareness certificate
+              Complete 4 interactive challenges find out what InfoSec team at Syncron Prepared for you.
             </p>
           </div>
         </div>
