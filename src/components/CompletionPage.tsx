@@ -92,7 +92,7 @@ const CompletionPage: React.FC = () => {
                 <Input
                   value={constructedUrl}
                   onChange={(e) => setConstructedUrl(e.target.value)}
-                  placeholder="Enter the complete URL..."
+                  placeholder="Enter the letters you have collected."
                   className="flex-1"
                 />
                 <Button 
