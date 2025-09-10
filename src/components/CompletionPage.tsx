@@ -55,7 +55,7 @@ const CompletionPage: React.FC = () => {
               ASSESSMENT COMPLETE
             </h1>
             <p className="text-xl text-muted-foreground">
-              You've successfully identified security threats and proven your awareness!
+              You've successfully identified security threats!
             </p>
           </div>
 
@@ -112,8 +112,8 @@ const CompletionPage: React.FC = () => {
               <h4 className="font-semibold text-foreground mb-3">🎯 What You Learned</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Email verification protocols</li>
-                <li>• USB security best practices</li>
-                <li>• Workstation security habits</li>
+                <li>• Concept of encryption</li>
+                <li>• Secure URL identofication</li>
                 <li>• Social engineering awareness</li>
               </ul>
             </div>
@@ -121,10 +121,10 @@ const CompletionPage: React.FC = () => {
             <div className="bg-card/30 p-6 rounded-lg border border-border/50">
               <h4 className="font-semibold text-foreground mb-3">🚀 Next Steps</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
+                <li>• Complete your security Assessment </li>
                 <li>• Complete your personalized training</li>
-                <li>• Earn security certification</li>
-                <li>• Join monthly security updates</li>
-                <li>• Report security incidents</li>
+                <li>• Keep an eye on upcoming updates</li>
+                <li>• Report anything you think is suspicious</li>
               </ul>
             </div>
           </div>
