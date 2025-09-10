@@ -32,7 +32,7 @@ const WelcomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Welcome to our interactive cybersecurity training program. Test your knowledge, 
-              learn best practices, and become a security champion in your organization.
+              learn best practices, and become a security champion.
             </p>
           </div>
 
