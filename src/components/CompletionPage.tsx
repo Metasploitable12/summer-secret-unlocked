@@ -14,7 +14,7 @@ const CompletionPage: React.FC = () => {
   // The secret code is formed by the letters: I-S-4-U = "IS4U"
   const secretCode = revealedLetters.join('');
   const expectedCode = 'IS4U';
-  const targetUrl = 'https://syncron.atlassian.net/wiki/x/j4BEZQ';
+  const targetUrl = 'https://syncron.atlassian.net/wiki/x/UwDPZg';
 
   const handleUrlSubmit = () => {
     if (secretCode === expectedCode) {
