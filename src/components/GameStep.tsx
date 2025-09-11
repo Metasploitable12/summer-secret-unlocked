@@ -327,7 +327,7 @@ const GameStep: React.FC = () => {
                   <p className="text-destructive text-sm font-medium mb-2">
                     🎯 Answer Revealed: {currentChallenge.answer}
                   </p>
-                  <p className="text-destructive-foreground text-xs">
+                  <p className="text-destructive text-xs">
                     {currentChallenge.revealHint}
                   </p>
                 </div>
