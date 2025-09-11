@@ -44,7 +44,7 @@ const questionPools = [
       question: "What's most suspicious?",
       answer: "Spelling mistakes",
       letter: "I",
-      hint: "The link hides more than you think…",
+      hint: " Hmm, this character is strange to use in an email.",
       revealHint: "Look at the URL carefully, mortal… Danger is often disguised as trust.",
       icon: <AlertTriangle className="w-6 h-6" />,
       type: 'mcq',
@@ -57,7 +57,7 @@ const questionPools = [
       question: "Which attachment should worry you most?",
       answer: ".exe from unknown sender",
       letter: "I",
-      hint: "The link hides more than you think…",
+      hint: "Which type of file do you use most often in your work?",
       revealHint: "Look at the URL carefully, mortal… Danger is often disguised as trust.",
       icon: <AlertTriangle className="w-6 h-6" />,
       type: 'mcq',
@@ -68,7 +68,7 @@ const questionPools = [
     {
       id: 2,
       title: "Word Puzzle Challenge",
-      description: "Unscramble this security term: SIPSSWORDA",
+      description: "Unscramble this security term: SIPSWORDA",
       question: "What's the unscrambled word?",
       answer: "PASSWORD",
       letter: "S",
@@ -80,12 +80,12 @@ const questionPools = [
     {
       id: 2,
       title: "Security Acronym Puzzle",
-      description: "Unscramble this 3-letter security term: FAM",
-      question: "What does FAM unscramble to?",
-      answer: "MFA",
+      description: "Unscramble this security term: CINDETIN",
+      question: "What the unscrambled word?",
+      answer: "Incident",
       letter: "S",
-      hint: "Rearrange the letters, the word is watching you.",
-      revealHint: "It's something you use every day to log in… Think security basics!",
+      hint: "Report it when you spot it.",
+      revealHint: "It's never too late to report it.",
       icon: <Lock className="w-6 h-6" />,
       type: 'text'
     },
@@ -96,8 +96,8 @@ const questionPools = [
       question: "What's the unscrambled word?",
       answer: "PHISHING",
       letter: "S",
-      hint: "Rearrange the letters, the word is watching you.",
-      revealHint: "It's something you use every day to log in… Think security basics!",
+      hint: "Think security basics.",
+      revealHint: "Always think before you click.",
       icon: <Lock className="w-6 h-6" />,
       type: 'text'
     }
@@ -324,10 +324,10 @@ const GameStep: React.FC = () => {
               
               {showRevealHint && (
                 <div className="bg-destructive/5 border border-destructive/30 p-4 rounded-lg animate-fade-in">
-                  <p className="text-destructive text-sm font-medium mb-2">
+                  <p className="text-white text-sm font-medium mb-2">
                     🎯 Answer Revealed: {currentChallenge.answer}
                   </p>
-                  <p className="text-destructive-foreground text-xs">
+                  <p className="text-white text-xs">
                     {currentChallenge.revealHint}
                   </p>
                 </div>
