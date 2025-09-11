@@ -113,7 +113,7 @@ const CompletionPage: React.FC = () => {
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Email verification protocols</li>
                 <li>• Concept of encryption</li>
-                <li>• Secure URL identofication</li>
+                <li>• Secure URL identification</li>
                 <li>• Social engineering awareness</li>
               </ul>
             </div>
