@@ -17,8 +17,8 @@ const GameContext = createContext<GameContextType | undefined>(undefined);
 
 // Provider component
 export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [gameStarted, setGameStarted] = useState(false);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [gameStarted, setGameStarted] = useState(true); // Auto-start the game
+  const [currentStep, setCurrentStep] = useState(1); // Start with first challenge
   const [gameCompleted, setGameCompleted] = useState(false);
   const [revealedLetters, setRevealedLetters] = useState<string[]>([]);
 
@@ -43,8 +43,8 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const resetGame = () => {
-    setGameStarted(false);
-    setCurrentStep(0);
+    setGameStarted(true);
+    setCurrentStep(1);
     setGameCompleted(false);
     setRevealedLetters([]);
   };

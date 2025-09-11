@@ -248,12 +248,12 @@ const GameStep: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6">
-      <Card className="max-w-2xl w-full p-8 cyber-glow bg-card/50 backdrop-blur-sm border-border/50">
+      <Card className="max-w-2xl w-full p-8 cyber-glow bg-card shadow-lg border-2 border-primary/20">
         <div className="space-y-6">
           {/* Progress */}
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Security Assessment Progress</span>
+              <span className="text-muted-foreground">Security Training Progress</span>
               <span className="text-primary font-medium">Step {currentStep} of 4</span>
             </div>
             <Progress value={progress} className="h-2" />
@@ -266,7 +266,7 @@ const GameStep: React.FC = () => {
               <h2 className="text-2xl font-bold text-foreground">{currentChallenge.title}</h2>
             </div>
             
-            <div className="bg-secondary/50 p-4 rounded-lg">
+            <div className="bg-secondary p-4 rounded-lg border border-primary/10">
               <p className="text-foreground">{currentChallenge.description}</p>
             </div>
           </div>
@@ -283,8 +283,8 @@ const GameStep: React.FC = () => {
                       key={index}
                       className={`p-4 border rounded-lg cursor-pointer transition-all hover:bg-accent/10 ${
                         selectedOption === option
-                          ? 'border-primary bg-primary/10 text-primary'
-                          : 'border-border bg-card/50'
+                          ? 'border-primary bg-primary/5 text-primary border-2'
+                          : 'border-border bg-card hover:border-primary/30'
                       }`}
                       onClick={() => setSelectedOption(option)}
                     >
@@ -306,13 +306,13 @@ const GameStep: React.FC = () => {
                   value={userAnswer}
                   onChange={(e) => setUserAnswer(e.target.value)}
                   placeholder="Enter your answer..."
-                  className="text-center text-lg font-medium bg-input/50"
+                  className="text-center text-lg font-medium bg-input border-primary/20 focus:border-primary"
                   onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                 />
               )}
               
               {showHint && !showRevealHint && (
-                <div className="bg-accent/10 border border-accent/30 p-3 rounded-lg animate-fade-in">
+                <div className="bg-warning-glow/5 border border-warning-glow/30 p-3 rounded-lg animate-fade-in">
                   <p className="text-accent text-sm">
                     💡 Creative Hint: {currentChallenge.hint}
                   </p>
@@ -320,7 +320,7 @@ const GameStep: React.FC = () => {
               )}
               
               {showRevealHint && (
-                <div className="bg-destructive/10 border border-destructive/30 p-4 rounded-lg animate-fade-in">
+                <div className="bg-destructive/5 border border-destructive/30 p-4 rounded-lg animate-fade-in">
                   <p className="text-destructive text-sm font-medium mb-2">
                     🎯 Answer Revealed: {currentChallenge.answer}
                   </p>
@@ -334,7 +334,7 @@ const GameStep: React.FC = () => {
                 <Button 
                   onClick={handleRevealAnswer}
                   variant="outline"
-                  className="w-full border-accent text-accent hover:bg-accent/10"
+                  className="w-full border-primary text-primary hover:bg-primary/5"
                 >
                   🆘 Reveal Answer & Continue
                 </Button>
@@ -351,16 +351,16 @@ const GameStep: React.FC = () => {
           </div>
 
           {/* Revealed Letters Display */}
-          <div className="bg-muted/30 p-4 rounded-lg">
+          <div className="bg-secondary p-4 rounded-lg border border-primary/10">
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Revealed Letters:</h4>
             <div className="flex gap-2 justify-center">
               {revealedLetters.map((letter, index) => (
-                <div key={index} className="w-12 h-12 bg-primary/20 border border-primary/40 rounded-lg flex items-center justify-center">
+                <div key={index} className="w-12 h-12 bg-primary/10 border-2 border-primary/40 rounded-lg flex items-center justify-center">
                   <span className="text-primary font-bold text-lg">{letter}</span>
                 </div>
               ))}
               {Array.from({ length: 4 - revealedLetters.length }).map((_, index) => (
-                <div key={index + revealedLetters.length} className="w-12 h-12 bg-muted/50 border border-border rounded-lg flex items-center justify-center">
+                <div key={index + revealedLetters.length} className="w-12 h-12 bg-muted border border-border rounded-lg flex items-center justify-center">
                   <span className="text-muted-foreground">?</span>
                 </div>
               ))}

@@ -8,52 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Spooky cyber security theme */
-    --background: 220 13% 7%;
-    --foreground: 0 0% 95%;
+    /* Professional corporate theme with orange accents */
+    --background: 0 0% 98%;
+    --foreground: 220 13% 15%;
 
-    --card: 220 13% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 15%;
 
-    --popover: 220 13% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 15%;
 
-    --primary: 0 84% 55%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 13% 15%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 25 20% 95%;
+    --secondary-foreground: 220 13% 15%;
 
-    --muted: 220 13% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 13% 45%;
 
-    --accent: 14 100% 50%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 15%;
-    --ring: 0 84% 55%;
+    --border: 220 13% 85%;
+    --input: 0 0% 100%;
+    --ring: 25 95% 53%;
 
     --radius: 0.75rem;
 
-    /* Custom spooky theme colors */
-    --cyber-glow: 0 84% 55%;
-    --warning-glow: 14 100% 50%;
-    --success-glow: 120 100% 40%;
-    --shadow-red: 0 84% 35%;
+    /* Custom professional theme colors */
+    --cyber-glow: 25 95% 53%;
+    --warning-glow: 45 100% 50%;
+    --success-glow: 120 60% 45%;
+    --shadow-orange: 25 95% 35%;
     
     /* Gradients */
-    --gradient-spooky: linear-gradient(135deg, hsl(220 13% 7%), hsl(220 13% 12%));
-    --gradient-danger: linear-gradient(135deg, hsl(0 84% 35%), hsl(14 100% 40%));
-    --gradient-glow: radial-gradient(circle at center, hsl(0 84% 55% / 0.3), transparent);
+    --gradient-professional: linear-gradient(135deg, hsl(0 0% 98%), hsl(25 20% 95%));
+    --gradient-orange: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 80% 60%));
+    --gradient-glow: radial-gradient(circle at center, hsl(25 95% 53% / 0.2), transparent);
     
     /* Animations */
-    --transition-spooky: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --pulse-glow: 0 0 20px hsl(var(--cyber-glow) / 0.5);
-    --shadow-intense: 0 10px 40px -10px hsl(var(--shadow-red) / 0.6);
+    --shadow-intense: 0 10px 40px -10px hsl(var(--shadow-orange) / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -118,7 +118,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    background: var(--gradient-spooky);
+    background: var(--gradient-professional);
     min-height: 100vh;
   }
 }
@@ -126,33 +126,28 @@ All colors MUST be HSL.
 @layer components {
   .cyber-glow {
     box-shadow: var(--pulse-glow);
-    transition: var(--transition-spooky);
+    transition: var(--transition-smooth);
   }
   
   .cyber-glow:hover {
-    box-shadow: 0 0 30px hsl(var(--cyber-glow) / 0.8);
+    box-shadow: 0 0 25px hsl(var(--cyber-glow) / 0.4);
     transform: translateY(-2px);
   }
   
-  .spooky-text {
+  .brand-text {
     background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% 200%;
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 4s ease-in-out infinite;
   }
   
-  .glitch-effect {
-    position: relative;
-    animation: glitch 2s infinite;
-  }
-  
-  .surveillance-grid {
+  .professional-grid {
     background-image: 
-      linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(hsl(var(--border) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 }
 
@@ -161,20 +156,11 @@ All colors MUST be HSL.
   50% { background-position: 100% 50%; }
 }
 
-@keyframes glitch {
-  0%, 100% { transform: translateX(0); }
-  10% { transform: translateX(-2px); }
-  20% { transform: translateX(2px); }
-  30% { transform: translateX(-1px); }
-  40% { transform: translateX(1px); }
-  50% { transform: translateX(0); }
-}
-
-@keyframes pulse-red {
+@keyframes pulse-orange {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  50% { opacity: 0.8; }
 }
 
 .pulse-animation {
-  animation: pulse-red 2s ease-in-out infinite;
+  animation: pulse-orange 3s ease-in-out infinite;
 }
