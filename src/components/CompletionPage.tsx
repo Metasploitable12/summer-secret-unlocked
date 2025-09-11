@@ -20,7 +20,7 @@ const CompletionPage: React.FC = () => {
     if (secretCode === expectedCode) {
       toast({
         title: "🎉 Outstanding Work!",
-        description: "Redirecting to your personalized security training portal...",
+        description: "Redirecting to reveal the list of amazing events InfoSec team prepared for you..",
       });
       setTimeout(() => {
         window.open(targetUrl, '_blank');
@@ -28,7 +28,7 @@ const CompletionPage: React.FC = () => {
     } else {
       toast({
         title: "Code Incomplete",
-        description: "Complete all challenges to reveal the full IS4U code!",
+        description: "Complete all challenges to reveal the full code!",
         variant: "destructive",
       });
     }
@@ -52,10 +52,10 @@ const CompletionPage: React.FC = () => {
           {/* Congratulations Message */}
           <div className="space-y-4">
             <h1 className="text-4xl font-bold spooky-text">
-              TRAINING COMPLETE
+              TRIVIA COMPLETE
             </h1>
             <p className="text-xl text-muted-foreground">
-              Congratulations! You've successfully completed the security training!
+              Congratulations! You've successfully completed the security Trivia!
             </p>
           </div>
 
@@ -74,7 +74,7 @@ const CompletionPage: React.FC = () => {
           {/* URL Construction */}
           <div className="space-y-6 bg-secondary p-6 rounded-lg border border-primary/10">
             <h3 className="text-lg font-semibold text-foreground">
-              🔓 Unlock Your Personalized Training
+              🔓 It's Finally Time UnlockSomething Amazing
             </h3>
             <p className="text-sm text-muted-foreground">
               Use the letters you've collected to complete the URL below:
@@ -82,7 +82,7 @@ const CompletionPage: React.FC = () => {
             
             <div className="space-y-4">
               <div className="bg-muted p-4 rounded-lg border border-primary/5">
-                <p className="text-sm text-muted-foreground">Suggested URL format:</p>
+                <p className="text-sm text-muted-foreground">Let's see what you have collected:</p>
                 <code className="text-accent font-mono">
                   You've collected: {secretCode} {secretCode === expectedCode ? '✅' : `(Need: ${expectedCode})`}
                 </code>
@@ -109,7 +109,7 @@ const CompletionPage: React.FC = () => {
           {/* Additional Information */}
           <div className="grid md:grid-cols-2 gap-6 text-left">
             <div className="bg-secondary p-6 rounded-lg border border-primary/10">
-              <h4 className="font-semibold text-foreground mb-3">🎯 What You Learned</h4>
+              <h4 className="font-semibold text-foreground mb-3"> What You Learned</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Email verification protocols</li>
                 <li>• Concept of encryption</li>
@@ -119,7 +119,7 @@ const CompletionPage: React.FC = () => {
             </div>
             
             <div className="bg-secondary p-6 rounded-lg border border-primary/10">
-              <h4 className="font-semibold text-foreground mb-3">🚀 Next Steps</h4>
+              <h4 className="font-semibold text-foreground mb-3"> Next Steps</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Complete your security training</li>
                 <li>• Complete your personalized training</li>
