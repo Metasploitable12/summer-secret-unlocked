@@ -77,12 +77,12 @@ const CompletionPage: React.FC = () => {
               🔓 It's Finally Time To Unlock Something Amazing
             </h3>
             <p className="text-sm text-muted-foreground">
-              Stay Tuned for more updates in you PM soon, 
+              Stay tuned for more updates in your PM soon, 
             </p>
             
             <div className="space-y-4">
               <div className="bg-muted p-4 rounded-lg border border-primary/5">
-                <p className="text-sm text-muted-foreground">Rememember, there's nothing more rewarding than you speed </p>
+                <p className="text-sm text-muted-foreground">Rememember, there's nothing more rewarding than your speed </p>
                 <code className="text-accent font-mono">
                   You've collected: {secretCode} {secretCode === expectedCode ? '= InfoSec For You' : `(Need: ${expectedCode})`}
                 </code>
