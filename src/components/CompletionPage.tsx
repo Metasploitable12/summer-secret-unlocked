@@ -125,7 +125,7 @@ const CompletionPage: React.FC = () => {
                 <li>• Complete your security assessment</li>
                 <li>• Complete your personalized training</li>
                 <li>• Keep an eye on upcoming updates</li>
-                <li>• Report anything you think is suspicious</li>
+                <li>• Report anything you think is suspicious </li>
               </ul>
             </div>
           </div>
