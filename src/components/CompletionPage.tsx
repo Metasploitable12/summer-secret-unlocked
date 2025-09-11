@@ -55,7 +55,7 @@ const CompletionPage: React.FC = () => {
               TRIVIA COMPLETE
             </h1>
             <p className="text-xl text-muted-foreground">
-              Congratulations! You've successfully completed the security Trivia!
+              Congratulations! You've successfully completed the Security Trivia!
             </p>
           </div>
 
@@ -74,17 +74,17 @@ const CompletionPage: React.FC = () => {
           {/* URL Construction */}
           <div className="space-y-6 bg-secondary p-6 rounded-lg border border-primary/10">
             <h3 className="text-lg font-semibold text-foreground">
-              🔓 It's Finally Time UnlockSomething Amazing
+              🔓 It's Finally Time To Unlock Something Amazing
             </h3>
             <p className="text-sm text-muted-foreground">
-              Use the letters you've collected to complete the URL below:
+              Stay Tuned for more updates in you PM soon, 
             </p>
             
             <div className="space-y-4">
               <div className="bg-muted p-4 rounded-lg border border-primary/5">
-                <p className="text-sm text-muted-foreground">Let's see what you have collected:</p>
+                <p className="text-sm text-muted-foreground">Rememember, there's nothing more rewarding than you speed </p>
                 <code className="text-accent font-mono">
-                  You've collected: {secretCode} {secretCode === expectedCode ? '✅' : `(Need: ${expectedCode})`}
+                  You've collected: {secretCode} {secretCode === expectedCode ? '= InfoSec For You' : `(Need: ${expectedCode})`}
                 </code>
               </div>
               
@@ -97,7 +97,8 @@ const CompletionPage: React.FC = () => {
                 />
                 <Button 
                   onClick={handleUrlSubmit}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow"
+                  disabled={constructedUrl !== expectedCode}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Access
@@ -121,7 +122,7 @@ const CompletionPage: React.FC = () => {
             <div className="bg-secondary p-6 rounded-lg border border-primary/10">
               <h4 className="font-semibold text-foreground mb-3"> Next Steps</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
-                <li>• Complete your security training</li>
+                <li>• Complete your security assessment</li>
                 <li>• Complete your personalized training</li>
                 <li>• Keep an eye on upcoming updates</li>
                 <li>• Report anything you think is suspicious</li>
