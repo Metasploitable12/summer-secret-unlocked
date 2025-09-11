@@ -324,7 +324,7 @@ const GameStep: React.FC = () => {
               
               {showRevealHint && (
                 <div className="bg-destructive/5 border border-destructive/30 p-4 rounded-lg animate-fade-in">
-                  <p className="text-white text-sm font-medium mb-2">
+                  <p className="text-destructive text-sm font-medium mb-2">
                     🎯 Answer Revealed: {currentChallenge.answer}
                   </p>
                   <p className="text-destructive-foreground text-xs">
