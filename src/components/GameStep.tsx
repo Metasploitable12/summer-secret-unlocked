@@ -70,7 +70,7 @@ const questionPools = [
       title: "Word Puzzle Challenge",
       description: "Unscramble this security term: SIPSSWORDA",
       question: "What's the unscrambled word?",
-      answer: "PASSWORDS",
+      answer: "PASSWORD",
       letter: "S",
       hint: "Rearrange the letters, the word is watching you.",
       revealHint: "It's something you use every day to log in… Think security basics!",
@@ -133,39 +133,42 @@ const questionPools = [
   [
     {
       id: 4,
-      title: "General InfoSec Knowledge",
-      description: "You are getting very close to the final step",
-      question: "What was the most recent updte InfoSec team Share with you?",
-      answer: "Trust Center 2.0",
+      title: "InfoSec Security Alertness",
+      description: "Where should our customers go to find up-to-date information about Syncron’s security posture?",
+      question: "Select the most appropriate option:",
+      answer: "Syncron’s Trust Center",
       letter: "U",
-      hint: "The answer lies in the recent infosec communicaion with you ",
-      revealHint: "Trust Center 2.0 is what we meant",
-      icon: <CheckCircle className="w-6 h-6" />,
-      type: 'text'
+      hint: "Only believe official resources.",
+      revealHint: "Look for the nost trustful source carefully, mortal… Danger is often disguised as trust.",
+      icon: <AlertTriangle className="w-6 h-6" />,
+      type: 'mcq',
+      options: ["Syncron’s Trust Center", "Check on Google", "Ask ChatGPT"]
     },
     {
       id: 4,
-      title: "General InfoSec Knowledge",
-      description: "You are getting very close to the final step",
-      question: "What was the most recent updte InfoSec team Share with you?",
-      answer: "Trust Center 2.0",
+        title: "InfoSec Security Alertness",
+      description: "Which is an inappropriate place to report security incidents and concerns?",
+      question: "Select the most inappropriate option:",
+      answer: "Via EP Help Center",
       letter: "U",
-      hint: "The answer lies in the recent infosec communicaion with you ",
-      revealHint: "Trust Center 2.0 is what we meant",
-      icon: <CheckCircle className="w-6 h-6" />,
-      type: 'text'
+      hint: "Route InfoSec questions directly to InfoSec.",
+      revealHint: "All security incident related concerns must directly to reported to the InfoSec team",
+      icon: <AlertTriangle className="w-6 h-6" />,
+      type: 'mcq',
+      options: ["Via infosec-incident@syncron.com", "Via IS-Help Center Teams channel", "Via EP Help Center"]
     },
     {
       id: 4,
-      title: "General InfoSec Knowledge",
-      description: "You are getting very close to the final step",
-      question: "What was the most recent updte InfoSec team Share with you?",
-      answer: "Trust Center 2.0",
+      title: "InfoSec Security Alertness",
+      description: "Where can get quick answers about InfoSec in Syncron?",
+      question: "Select the most appropriate option:",
+      answer: "InfoSec CoPilot",
       letter: "U",
-      hint: "The answer lies in the recent infosec communicaion with you ",
-      revealHint: "Trust Center 2.0 is what we meant",
-      icon: <CheckCircle className="w-6 h-6" />,
-      type: 'text'
+      hint: "Only believe official resources.",
+      revealHint: "Look for the nost trustful source carefully, mortal… Danger is often disguised as trust.",
+      icon: <AlertTriangle className="w-6 h-6" />,
+      type: 'mcq',
+      options: ["ChatGPT", "InfoSec CoPilot", "Asking InfoSec team in chats"]
     }
   ]
 ];
@@ -178,7 +181,7 @@ const getRandomChallenge = (poolIndex: number) => {
 
 const challenges: Challenge[] = [
   getRandomChallenge(0),
-  getRandomChallenge(1), 
+  getRandomChallenge(1),
   getRandomChallenge(2),
   getRandomChallenge(3)
 ];
@@ -334,7 +337,7 @@ const GameStep: React.FC = () => {
                 <Button 
                   onClick={handleRevealAnswer}
                   variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary/5"
+                  className="w-full border-primary text-black hover:bg-primary/5"
                 >
                   🆘 Reveal Answer & Continue
                 </Button>
