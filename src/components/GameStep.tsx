@@ -6,6 +6,7 @@ import { useGame } from './GameContext';
 import { Progress } from '@/components/ui/progress';
 import { AlertTriangle, Lock, Key, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import SecurityHeader from './SecurityHeader';
 
 interface Challenge {
   id: number;
@@ -250,7 +251,9 @@ const GameStep: React.FC = () => {
   if (!currentChallenge) return null;
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="min-h-screen bg-background">
+      <SecurityHeader />
+      <div className="flex items-center justify-center p-6">
       <Card className="max-w-2xl w-full p-8 cyber-glow bg-card shadow-lg border-2 border-primary/20">
         <div className="space-y-6">
           {/* Progress */}
@@ -371,6 +374,7 @@ const GameStep: React.FC = () => {
           </div>
         </div>
       </Card>
+      </div>
     </div>
   );
 };

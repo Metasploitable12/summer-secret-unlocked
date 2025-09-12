@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { useGame } from './GameContext';
 import { Trophy, ExternalLink, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import SecurityHeader from './SecurityHeader';
 
 const CompletionPage: React.FC = () => {
   const { revealedLetters, resetGame } = useGame();
@@ -41,7 +42,9 @@ const CompletionPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="min-h-screen bg-background">
+      <SecurityHeader />
+      <div className="flex items-center justify-center p-6">
       <Card className="max-w-3xl w-full p-8 cyber-glow bg-card shadow-lg border-2 border-primary/20">
         <div className="text-center space-y-8">
           {/* Success Icon */}
@@ -143,6 +146,7 @@ const CompletionPage: React.FC = () => {
           </div>
         </div>
       </Card>
+      </div>
     </div>
   );
 };
