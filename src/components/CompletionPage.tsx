@@ -42,50 +42,50 @@ const CompletionPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       <SecurityHeader />
-      <div className="flex items-center justify-center p-6">
-      <Card className="max-w-3xl w-full p-8 cyber-glow bg-card shadow-lg border-2 border-primary/20">
-        <div className="text-center space-y-8">
+      <div className="flex-1 flex items-center justify-center p-4 overflow-auto">
+        <Card className="max-w-3xl w-full p-6 cyber-glow bg-card shadow-lg border-2 border-primary/20 max-h-full overflow-auto">
+          <div className="text-center space-y-6">
           {/* Success Icon */}
-          <div className="mx-auto w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
-            <Trophy className="w-12 h-12 text-primary-foreground" />
+          <div className="mx-auto w-20 h-20 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+            <Trophy className="w-10 h-10 text-primary-foreground" />
           </div>
 
           {/* Congratulations Message */}
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold spooky-text">
+          <div className="space-y-3">
+            <h1 className="text-3xl font-bold brand-text">
               TRIVIA COMPLETE
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               Congratulations! You've successfully completed the Security Trivia!
             </p>
           </div>
 
           {/* Revealed Letters */}
-          <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-foreground">Your Revealed Letters:</h2>
-            <div className="flex gap-4 justify-center">
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">Your Revealed Letters:</h2>
+            <div className="flex gap-3 justify-center">
               {revealedLetters.map((letter, index) => (
-                <div key={index} className="w-16 h-16 bg-primary/10 border-2 border-primary rounded-lg flex items-center justify-center cyber-glow">
-                  <span className="text-primary font-bold text-2xl">{letter}</span>
+                <div key={index} className="w-12 h-12 bg-primary/10 border-2 border-primary rounded-lg flex items-center justify-center cyber-glow">
+                  <span className="text-primary font-bold text-lg">{letter}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* URL Construction */}
-          <div className="space-y-6 bg-secondary p-6 rounded-lg border border-primary/10">
-            <h3 className="text-lg font-semibold text-foreground">
+          <div className="space-y-4 bg-secondary p-4 rounded-lg border border-primary/10">
+            <h3 className="text-base font-semibold text-foreground">
               🔓 It's Finally Time To Unlock Something Amazing
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               Stay Tuned for more updates in you PM soon, 
             </p>
             
-            <div className="space-y-4">
-              <div className="bg-muted p-4 rounded-lg border border-primary/5">
-                <p className="text-sm text-muted-foreground">Rememember, there's nothing more rewarding than you speed </p>
+            <div className="space-y-3">
+              <div className="bg-muted p-3 rounded-lg border border-primary/5">
+                <p className="text-xs text-muted-foreground">Remember, there's nothing more rewarding than your speed </p>
                 <code className="text-accent font-mono">
                   You've collected: {secretCode} {secretCode === expectedCode ? '= InfoSec For You' : `(Need: ${expectedCode})`}
                 </code>
@@ -101,7 +101,7 @@ const CompletionPage: React.FC = () => {
                 <Button 
                   onClick={handleUrlSubmit}
                   disabled={constructedUrl !== expectedCode}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow disabled:opacity-50 disabled:cursor-not-allowed py-2"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Access
@@ -111,8 +111,8 @@ const CompletionPage: React.FC = () => {
           </div>
 
           {/* Additional Information */}
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            <div className="bg-secondary p-6 rounded-lg border border-primary/10">
+          <div className="grid md:grid-cols-2 gap-4 text-left">
+            <div className="bg-secondary p-4 rounded-lg border border-primary/10">
               <h4 className="font-semibold text-foreground mb-3"> What You Learned</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Email verification protocols</li>
@@ -122,7 +122,7 @@ const CompletionPage: React.FC = () => {
               </ul>
             </div>
             
-            <div className="bg-secondary p-6 rounded-lg border border-primary/10">
+            <div className="bg-secondary p-4 rounded-lg border border-primary/10">
               <h4 className="font-semibold text-foreground mb-3"> Next Steps</h4>
               <ul className="text-sm text-muted-foreground space-y-2">
                 <li>• Complete your security assessment</li>
@@ -134,18 +134,18 @@ const CompletionPage: React.FC = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-4 justify-center pt-6">
+          <div className="flex gap-4 justify-center pt-4">
             <Button 
               onClick={resetGame}
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/5"
+              className="border-primary text-primary hover:bg-primary/5 py-2"
             >
               <RefreshCw className="w-4 h-4 mr-2" />
               Start Over
             </Button>
           </div>
-        </div>
-      </Card>
+          </div>
+        </Card>
       </div>
     </div>
   );

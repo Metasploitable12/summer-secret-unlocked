@@ -251,50 +251,50 @@ const GameStep: React.FC = () => {
   if (!currentChallenge) return null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       <SecurityHeader />
-      <div className="flex items-center justify-center p-6">
-      <Card className="max-w-2xl w-full p-8 cyber-glow bg-card shadow-lg border-2 border-primary/20">
-        <div className="space-y-6">
+      <div className="flex-1 flex items-center justify-center p-4 overflow-auto">
+        <Card className="max-w-2xl w-full p-6 cyber-glow bg-card shadow-lg border-2 border-primary/20 max-h-full overflow-auto">
+          <div className="space-y-4">
           {/* Progress */}
-          <div className="space-y-2">
+          <div className="space-y-1">
             <div className="flex justify-between text-sm">
               <span className="text-muted-foreground">Security Training Progress</span>
               <span className="text-primary font-medium">Step {currentStep} of 4</span>
             </div>
-            <Progress value={progress} className="h-2" />
+            <Progress value={progress} className="h-1.5" />
           </div>
 
           {/* Challenge Header */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-3">
             <div className="flex items-center justify-center gap-3">
               <div className="text-primary">{currentChallenge.icon}</div>
-              <h2 className="text-2xl font-bold text-foreground">{currentChallenge.title}</h2>
+              <h2 className="text-xl font-bold text-foreground">{currentChallenge.title}</h2>
             </div>
             
-            <div className="bg-secondary p-4 rounded-lg border border-primary/10">
-              <p className="text-foreground">{currentChallenge.description}</p>
+            <div className="bg-secondary p-3 rounded-lg border border-primary/10">
+              <p className="text-sm text-foreground">{currentChallenge.description}</p>
             </div>
           </div>
 
           {/* Question */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-primary">{currentChallenge.question}</h3>
+          <div className="space-y-3">
+            <h3 className="text-base font-semibold text-primary">{currentChallenge.question}</h3>
             
-            <div className="space-y-4">
+            <div className="space-y-3">
               {currentChallenge.type === 'mcq' ? (
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {currentChallenge.options?.map((option, index) => (
                     <div
                       key={index}
-                      className={`p-4 border rounded-lg cursor-pointer transition-all hover:bg-accent/10 ${
+                      className={`p-3 border rounded-lg cursor-pointer transition-all hover:bg-accent/10 ${
                         selectedOption === option
                           ? 'border-primary bg-primary/5 text-primary border-2'
                           : 'border-border bg-card hover:border-primary/30'
                       }`}
                       onClick={() => setSelectedOption(option)}
                     >
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2">
                         <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                           selectedOption === option ? 'border-primary' : 'border-muted-foreground'
                         }`}>
@@ -312,13 +312,13 @@ const GameStep: React.FC = () => {
                   value={userAnswer}
                   onChange={(e) => setUserAnswer(e.target.value)}
                   placeholder="Enter your answer..."
-                  className="text-center text-lg font-medium bg-input border-primary/20 focus:border-primary"
+                  className="text-center text-base font-medium bg-input border-primary/20 focus:border-primary"
                   onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                 />
               )}
               
               {showHint && !showRevealHint && (
-                <div className="bg-warning-glow/5 border border-warning-glow/30 p-3 rounded-lg animate-fade-in">
+                <div className="bg-warning-glow/5 border border-warning-glow/30 p-2 rounded-lg animate-fade-in">
                   <p className="text-accent text-sm">
                     💡 Creative Hint: {currentChallenge.hint}
                   </p>
@@ -326,7 +326,7 @@ const GameStep: React.FC = () => {
               )}
               
               {showRevealHint && (
-                <div className="bg-destructive/5 border border-destructive/30 p-4 rounded-lg animate-fade-in">
+                <div className="bg-destructive/5 border border-destructive/30 p-3 rounded-lg animate-fade-in">
                   <p className="text-destructive text-sm font-medium mb-2">
                     🎯 Answer Revealed: {currentChallenge.answer}
                   </p>
@@ -340,7 +340,7 @@ const GameStep: React.FC = () => {
                 <Button 
                   onClick={handleRevealAnswer}
                   variant="outline"
-                  className="w-full border-primary text-black hover:bg-primary/5"
+                  className="w-full border-primary text-black hover:bg-primary/5 py-2"
                 >
                   🆘 Reveal Answer & Continue
                 </Button>
@@ -348,7 +348,7 @@ const GameStep: React.FC = () => {
               
               <Button 
                 onClick={handleSubmit}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground cyber-glow py-2"
                 disabled={currentChallenge.type === 'mcq' ? !selectedOption : !userAnswer.trim()}
               >
                 Submit Answer
@@ -357,23 +357,23 @@ const GameStep: React.FC = () => {
           </div>
 
           {/* Revealed Letters Display */}
-          <div className="bg-secondary p-4 rounded-lg border border-primary/10">
+          <div className="bg-secondary p-3 rounded-lg border border-primary/10">
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Revealed Letters:</h4>
             <div className="flex gap-2 justify-center">
               {revealedLetters.map((letter, index) => (
-                <div key={index} className="w-12 h-12 bg-primary/10 border-2 border-primary/40 rounded-lg flex items-center justify-center">
-                  <span className="text-primary font-bold text-lg">{letter}</span>
+                <div key={index} className="w-10 h-10 bg-primary/10 border-2 border-primary/40 rounded-lg flex items-center justify-center">
+                  <span className="text-primary font-bold text-base">{letter}</span>
                 </div>
               ))}
               {Array.from({ length: 4 - revealedLetters.length }).map((_, index) => (
-                <div key={index + revealedLetters.length} className="w-12 h-12 bg-muted border border-border rounded-lg flex items-center justify-center">
+                <div key={index + revealedLetters.length} className="w-10 h-10 bg-muted border border-border rounded-lg flex items-center justify-center">
                   <span className="text-muted-foreground">?</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </Card>
+          </div>
+        </Card>
       </div>
     </div>
   );
